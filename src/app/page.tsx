@@ -1,101 +1,210 @@
+import Container from "@/components/Container";
+import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const experiences = [
+    {
+      companyName: "GetDevDone",
+      companyLink: "https://getdevdone.com/",
+      position: "Jr. FullStack Developer (Frontend focused)",
+      description:
+        "Working on various projects focusing on frontend development.",
+      from: "2024-07",
+      to: "Present",
+      techStacks: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SCSS",
+        "Bootstrap",
+        "Tailwind CSS",
+        "WordPress",
+        "Elementor",
+      ],
+    },
+    {
+      companyName: "GetDevDone",
+      companyLink: "https://getdevdone.com/",
+      position: "FullStack Developer Trainee",
+      description:
+        "Introduced to Web Accessibilities, how to implement them so that all users can navigate thoroughly, and creating pixel perfect designs.",
+      from: "2024-03",
+      to: "2024-07",
+      techStacks: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SCSS",
+        "Bootstrap",
+        "Tailwind CSS",
+        "WordPress",
+        "Elementor",
+      ],
+    },
+    {
+      companyName: "Realm Infotech",
+      companyLink: "https://realminfotek.com/",
+      position: "Frontend Developer Intern",
+      description:
+        "Worked on a quotation system, which helped our clients to make quotation ready within minutes. This helped them save a lot of time.",
+      from: "2023-07",
+      to: "2023-11",
+      techStacks: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+    },
+  ];
+  const projects = [
+    {
+      projectName: "Space Explore",
+      projectLinkGithub: "https://github.com/BeeRaaz/space-explore",
+      projectLinkLive: "https://space-explore-alpha.vercel.app/",
+      description:
+        "Implemented official API from NASA to show the Astrological Picture Of the Day (APOD).",
+      techStacks: ["Next.js", "TypeScript", "Tailwind CSS", "API NASA"],
+    },
+    {
+      projectName: "E-Com Cart",
+      projectLinkGithub: "https://github.com/BeeRaaz/e-com-practice",
+      projectLinkLive: "https://e-com-practice.vercel.app/",
+      description:
+        "Used fakestore API to list the products. Implemented Cart functionality with Local Storage.",
+      techStacks: ["React", "TypeScript", "Tailwind CSS", "API fakestore"],
+    },
+    {
+      projectName: "Valo Agents",
+      projectLinkGithub: "https://github.com/BeeRaaz/valo-agents",
+      projectLinkLive: "https://valo-agents.vercel.app/",
+      description:
+        'Used unofficial API to list the agents of a 5v5 FPS tactical shooter game "Valorant".',
+      techStacks: ["React", "Tailwind CSS", "GSAP"],
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+  return (
+    <>
+      <section className="pt-32 pb-4 md:pb-12">
+        <Container classes="text-center">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={"/Biraj-Bitmoji.png"}
+            alt={"BeeRaaz"}
+            width={300}
+            height={100}
+            className="rounded-3xl mx-auto mb-5 md:mb-10"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-5 md:mb-10">
+            BeeRaaz
+          </h1>
+          <p>
+            Enthusiastic Junior Frontend Developer with a year of experience in
+            building user-friendly and visually appealing web applications.
+            Passionate about creating intuitive and engaging digital
+            experiences. Eager to contribute to a dynamic team and continuously
+            learn and grow in the field of frontend development.
+          </p>
+        </Container>
+      </section>
+      <section className="py-4 md:py-12">
+        <Container>
+          <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-5 md:mb-10">
+            Experience
+          </h2>
+          <ul>
+            {experiences &&
+              experiences.map((experience) => (
+                <li key={experience.position} className="mb-5 last:mb-0">
+                  <div className="p-5 border border-border rounded-xl bg-background md:flex md:flex-wrap md:p-10">
+                    <div className="mb-3 md:w-1/4 md:mb-0">
+                      <Link
+                        href={experience.companyLink}
+                        target={"_blank"}
+                        className="inline-block text-xl font-medium tracking-tight mb-1"
+                      >
+                        {experience.companyName}
+                      </Link>
+                      <p className="text-sm text-muted-foreground">
+                        <time dateTime={experience.from}>
+                          {experience.from}
+                        </time>{" "}
+                        - <time dateTime={experience.to}>{experience.to}</time>
+                      </p>
+                    </div>
+                    <div className="md:flex-1 md:ps-5">
+                      <h3 className="text-2xl font-semibold tracking-tighter mb-3">
+                        {experience.position}
+                      </h3>
+                      <p className="text-base mb-3">{experience.description}</p>
+                      <h4 className="text-xl font-medium tracking-tight mb-3">
+                        Tech Stack
+                      </h4>
+                      <ul className="flex flex-wrap items-center gap-2">
+                        {experience.techStacks.map((stack) => (
+                          <li
+                            key={stack}
+                            className="py-1 px-3 md:py-2 md:px-3 bg-secondary border rounded-md flex flex-wrap justify-center items-center"
+                          >
+                            <span className="text-xs inline-block">
+                              {stack}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              ))}
+          </ul>
+        </Container>
+      </section>
+      <section className="py-4 md:py-12">
+        <Container>
+          <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-5 md:mb-10">
+            Projects
+          </h2>
+          <ul>
+            {projects &&
+              projects.map((project) => (
+                <li key={project.projectName} className="mb-5 last:mb-0">
+                  <div className="relative border border-border p-5 rounded-lg md:p-10">
+                    <div className="pb-5">
+                      <h3 className="text-2xl font-semibold tracking-tighter mb-3">
+                        {project.projectName}
+                      </h3>
+                      <p className="text-base mb-3">{project.description}</p>
+                      <ul className="flex flex-wrap items-center gap-2">
+                        {project.techStacks.map((stack) => (
+                          <li
+                            key={stack}
+                            className="py-1 px-3 md:py-2 md:px-3 bg-secondary border rounded-md flex flex-wrap justify-center items-center"
+                          >
+                            <span className="text-xs inline-block">
+                              {stack}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="flex flex-wrap gap-3 pt-5 border-t">
+                      <Link href={project.projectLinkGithub} target={'_blank'}>
+                        <Button className="group">
+                          View Code{" "}
+                          <ArrowUpRight className="transition-transform duration-500 group-hover:rotate-45" />
+                        </Button>
+                      </Link>
+                      <Link href={project.projectLinkLive} target={'_blank'}>
+                        <Button variant={"secondary"} className="group">
+                          View Live{" "}
+                          <ArrowUpRight className="transition-transform duration-500 group-hover:rotate-45" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </li>
+              ))}
+          </ul>
+        </Container>
+      </section>
+    </>
   );
 }
