@@ -57,12 +57,20 @@ export default function Home() {
   ];
   const projects = [
     {
-      projectName: "Space Explore",
-      projectLinkGithub: "https://github.com/BeeRaaz/space-explore",
-      projectLinkLive: "https://space-explore-alpha.vercel.app/",
+      projectName: "GitHub User Search App",
+      projectLinkGithub: "https://github.com/BeeRaaz/github-user-search-app",
+      projectLinkLive: "https://github-user-search-app-smoky.vercel.app/",
       description:
-        "Implemented official API from NASA to show the Astrological Picture Of the Day (APOD).",
-      techStacks: ["Next.js", "TypeScript", "Tailwind CSS", "API NASA"],
+        "Implemented official GitHub API to fetch user details, and show their public repositories in a client-side pagination.",
+      techStacks: ["React", "TypeScript", "Tailwind CSS", "API GitHub"],
+    },
+    {
+      projectName: "Trello Clone UI",
+      projectLinkGithub: "https://github.com/BeeRaaz/trello-clone-ui",
+      projectLinkLive: "https://trello-clone-ui.vercel.app/",
+      description:
+        'A small project that replicates the core UI and interactions of Trello — including boards, lists, and draggable cards.',
+      techStacks: ["React", "TypeScript", "Tailwind CSS",],
     },
     {
       projectName: "E-Com Cart",
@@ -71,14 +79,6 @@ export default function Home() {
       description:
         "Used fakestore API to list the products. Implemented Cart functionality with Local Storage.",
       techStacks: ["React", "TypeScript", "Tailwind CSS", "API fakestore"],
-    },
-    {
-      projectName: "Valo Agents",
-      projectLinkGithub: "https://github.com/BeeRaaz/valo-agents",
-      projectLinkLive: "https://valo-agents.vercel.app/",
-      description:
-        'Used unofficial API to list the agents of a 5v5 FPS tactical shooter game "Valorant".',
-      techStacks: ["React", "Tailwind CSS", "GSAP"],
     },
   ];
 
