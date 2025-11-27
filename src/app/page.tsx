@@ -119,7 +119,7 @@ export default function Home() {
                       <Link
                         href={experience.companyLink}
                         target={"_blank"}
-                        className="inline-block text-xl font-medium tracking-tight mb-1"
+                        className="inline-block text-xl font-medium tracking-tight mb-1 hover:opacity-80"
                       >
                         {experience.companyName}
                       </Link>
