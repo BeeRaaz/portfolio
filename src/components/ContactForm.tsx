@@ -31,8 +31,9 @@ const ContactForm = () => {
     setIsLoading(true);
     try {
       const response = await axios.post("/api/contact", data);
+      console.log(response);
 
-      if (response.statusText !== "OK") {
+      if (response.status !== 200) {
         throw new Error("Something went wrong while submitting the form.");
       }
 
