@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
-import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -84,7 +84,27 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
+      <section className="pt-32 pb-4 md:pb-12">
+      <Container classes="text-center">
+        <div className="relative max-w-80 mx-auto py-56 rounded-3xl overflow-hidden mb-5 md:mb-10">
+          <Image
+            src="/biraj-bitmoji.png"
+            alt="BeeRaaz"
+            fill
+          />
+        </div>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-5 md:mb-10">
+          BeeRaaz
+        </h1>
+        <p>
+          Enthusiastic Junior Frontend Developer with a year of experience in
+          building user-friendly and visually appealing web applications.
+          Passionate about creating intuitive and engaging digital
+          experiences. Eager to contribute to a dynamic team and continuously
+          learn and grow in the field of frontend development.
+        </p>
+      </Container>
+    </section>
       <section className="py-4 md:py-12">
         <Container>
           <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-5 md:mb-10">
