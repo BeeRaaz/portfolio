@@ -88,7 +88,7 @@ export default function Home() {
         <Container classes="text-center">
           <div className="relative max-w-80 mx-auto py-56 rounded-3xl overflow-hidden mb-5 md:mb-10">
             <Image
-              src="/biraj-bitmoji.png"
+              src="/hero-image.png"
               alt="BeeRaaz"
               fill
               className="object-cover"
