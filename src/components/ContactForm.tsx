@@ -7,12 +7,16 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
 
 type FormValues = {
   name: string;
   email: string;
   message: string;
 };
+
+// Email validation regex pattern
+const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 const ContactForm = () => {
   // states
@@ -31,13 +35,13 @@ const ContactForm = () => {
     setIsLoading(true);
     try {
       const response = await axios.post("/api/contact", data);
-      console.log(response);
 
       if (response.status !== 200) {
         throw new Error("Something went wrong while submitting the form.");
       }
 
       setIsFormSent(true);
+      toast.success("Message sent successfully!");
 
       // reset the form fields
       reset({
@@ -46,7 +50,12 @@ const ContactForm = () => {
         message: "",
       });
     } catch (error) {
-      alert(`Error submitting form: ${error}`);
+      // Show user-friendly error message via toast
+      if (axios.isAxiosError(error) && error.response?.data?.message) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("Failed to send message. Please try again later.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -85,7 +94,13 @@ const ContactForm = () => {
         <div className="space-y-1">
           <Label htmlFor="email">Email:</Label>
           <Input
-            {...register("email", { required: "Email is required" })}
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: EMAIL_REGEX,
+                message: "Please enter a valid email address",
+              },
+            })}
             id="email"
             type="email"
           />
