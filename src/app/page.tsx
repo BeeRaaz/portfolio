@@ -86,13 +86,12 @@ export default function Home() {
     <>
       <section className="pt-32 pb-4 md:pb-12">
         <Container classes="text-center">
-          <div className="relative max-w-80 mx-auto rounded-3xl overflow-hidden mb-5 md:mb-10">
+          <div className="relative max-w-80 mx-auto py-56 rounded-3xl overflow-hidden mb-5 md:mb-10">
             <Image
               src="/biraj-bitmoji.png"
               alt="BeeRaaz"
-              width={300}
-              height={100}
-              className="w-full"
+              fill
+              className="object-cover"
             />
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-5 md:mb-10">
